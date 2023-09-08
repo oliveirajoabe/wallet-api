@@ -12,7 +12,7 @@ function authenticateToken(req: Request, res: Response, next: NextFunction) {
 
   jwt.verify(token, secretKey as string, (err, decoded) => {
     if (err) {
-      return res.status(403).json({ error: `Token inválid ${err}` });
+      return res.status(403).json({ error: `Token inválido ${err}` });
     }
     // console.log(decoded);
 

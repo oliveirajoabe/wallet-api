@@ -14,7 +14,7 @@ export class Login {
     const user = await prisma.user.findUnique({ where: { email } });
 
     if (!user || !(await comparePasswords(password, user.password))) {
-      throw new AppError("Credenciais inválidas", 401);
+      throw new AppError("Credenciais inválidas", 200);
     }
 
     const token = generateToken({ email });
